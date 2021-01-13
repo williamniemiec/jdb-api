@@ -44,9 +44,6 @@ public class JDBOutput {
 	 * @return		JDB output
 	 * 
 	 * @throws		IOException If it cannot read JDB output
-	 * 
-	 * @apiNote		If {@link #DEBUG} is activated, it will display JDB 
-	 * output on the console
 	 */
 	public String read() throws IOException {
 		return output.readLine();

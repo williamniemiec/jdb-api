@@ -108,6 +108,19 @@ public class JDB {
 			return this;
 		}
 		
+		/**
+		 * Creates {@link JDB} with provided information. It is 
+		 * necessary to provide all required fields. The required fields 
+		 * are: <br />
+		 * <ul>
+		 * 	<li>Class path</li>
+		 * 	<li>Source path</li>
+		 * </ul>
+		 * 
+		 * @return		JDB with provided information
+		 * 
+		 * @throws		IllegalArgumentException If any required field is null
+		 */
 		public JDB build() {
 			if (classPath == null)
 				classPath = new ArrayList<>();
@@ -166,7 +179,7 @@ public class JDB {
 	 * 
 	 * @throws		IOException If JDB cannot be initialized 
 	 */
-	public JDB start() throws IOException {
+	public JDB run() throws IOException {
 		initializeJDB();
 		onShutdown();
 		
@@ -210,9 +223,6 @@ public class JDB {
 	 * {@link #read()} for JDB to process the command.
 	 * 
 	 * @param		command Command that will be sent to JDB
-	 * 
-	 * @apiNote		If {@link #DEBUG} is activated, it will display the 
-	 * command executed on the console
 	 */
 	public JDB send(String command) {
 		if (in == null)
@@ -228,9 +238,6 @@ public class JDB {
 	 * {@link #read()} for JDB to process these commands.
 	 * 
 	 * @param		commands Commands that will be sent to JDB
-	 * 
-	 * @apiNote		If {@link #DEBUG} is activated, it will display the 
-	 * command executed on the console
 	 */
 	public JDB send(String... commands) {
 		if (in == null)
@@ -248,9 +255,6 @@ public class JDB {
 	 * @return		JDB output
 	 * 
 	 * @throws		IOException If it cannot read JDB output
-	 * 
-	 * @apiNote		If {@link #DEBUG} is activated, it will display JDB 
-	 * output on the console
 	 */
 	public String read() {
 		try {

@@ -5,7 +5,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 /**
- * Responsible for handling JDB inputs.
+ * Responsible for handling JDB input.
  * 
  * @author		William Niemiec &lt; williamniemiec@hotmail.com &gt;
  */
@@ -42,9 +42,6 @@ public class JDBInput {
 	 * {@link JDBOutput#read()} for JDB to process the command.
 	 * 
 	 * @param		command Command that will be sent to JDB
-	 * 
-	 * @apiNote		If {@link #DEBUG} is activated, it will display the 
-	 * command executed on the console
 	 */
 	public void send(String command) {
 		input.println(command);
@@ -55,9 +52,6 @@ public class JDBInput {
 	 * {@link JDBOutput#read()} for JDB to process these commands.
 	 * 
 	 * @param		command Commands that will be sent to JDB
-	 * 
-	 * @apiNote		If {@link #DEBUG} is activated, it will display the 
-	 * command executed on the console
 	 */
 	public void send(String... commands) {
 		for (String command : commands) {
