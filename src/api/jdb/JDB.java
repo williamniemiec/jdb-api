@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+import api.util.ArgumentFile;
 import api.util.StringUtils;
 
 /**
@@ -128,6 +129,8 @@ public class JDB {
 			if (srcPath == null)
 				srcPath = new ArrayList<>();
 			
+			createArgumentFileFromClassPath();
+			
 			if (argumentFile == null) {
 				return new JDB(
 						workingDirectory, 
@@ -147,6 +150,19 @@ public class JDB {
 				);
 			}
 		}
+		
+		private void createArgumentFileFromClassPath() {
+			try {
+				argumentFile = ArgumentFile.createArgumentFile(
+						Path.of(System.getProperty("java.io.tmpdir")), 
+						"argfile.txt", 
+						classPath
+				);
+			} 
+			catch (IOException e) {
+				argumentFile = null;
+			}
+		}	
 		
 		private List<Path> relativizePaths(List<Path> paths) {
 			if (paths == null) 
