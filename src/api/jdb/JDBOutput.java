@@ -11,7 +11,7 @@ import java.util.List;
  * 
  * @author		William Niemiec &lt; williamniemiec@hotmail.com &gt;
  */
-public class JDBOutput {
+class JDBOutput {
 	
 	//---------------------------------------------------------------------
 	//		Attributes

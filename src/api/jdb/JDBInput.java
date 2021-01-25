@@ -9,7 +9,7 @@ import java.io.PrintWriter;
  * 
  * @author		William Niemiec &lt; williamniemiec@hotmail.com &gt;
  */
-public class JDBInput {
+class JDBInput {
 	
 	//---------------------------------------------------------------------
 	//		Attributes
