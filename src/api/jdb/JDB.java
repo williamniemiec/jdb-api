@@ -12,6 +12,7 @@ import api.util.StringUtils;
  * Simple API for JBD (Java debugger).
  * 
  * @author		William Niemiec &lt; williamniemiec@hotmail.com &gt;
+ * @see			https://github.com/williamniemiec/jdb-api
  */
 public class JDB {
 	
@@ -155,7 +156,7 @@ public class JDB {
 			try {
 				argumentFile = ArgumentFile.createArgumentFile(
 						Path.of(System.getProperty("java.io.tmpdir")), 
-						"argfile.txt", 
+						"argfile-jdb.txt", 
 						classPath
 				);
 			} 
@@ -311,5 +312,9 @@ public class JDB {
 	 */
 	public void waitFor() throws InterruptedException {
 		process.waitFor();
+	}
+	
+	public boolean isRunning() {
+		return (process != null) && process.isAlive();
 	}
 }
