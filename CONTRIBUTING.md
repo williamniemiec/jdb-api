@@ -138,7 +138,7 @@ To generate jar file, do the following:
 ![step2](https://github.com/williamniemiec/jdb-api/blob/master/docs/img/how-to-generate-jar/step2.png?raw=true)
 
 3) Save the jar in `dist/X.Y/<FILENAME>`, where X and Y are the current version numbers and \<FILENAME\> is defined as follows:
-`jdb-api_vX.Y.Z.jar`
+`jdb-X.Y.Z.jar`
 Where:  
 * X, Y, Z: Application version
 

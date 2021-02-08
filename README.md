@@ -116,9 +116,7 @@ See the documentation on how you can contribute to the project [here](https://gi
 |----------------|-------------------------------|-----------------------------|
 |dist |`Directory`|Released versions|
 |docs |`Directory`|Documentation files|
-|lib   |`Directory`|Libraries the project uses   |
 |src     |`Directory`| Source files |
-|tests|`Directory`|Tests of the source files|
 
 ## See more
 * [Oracle - jdb - The Java Debugger](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/jdb.html)
