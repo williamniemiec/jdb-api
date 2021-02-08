@@ -1,4 +1,4 @@
-package api.jdb.testfiles;
+package wniemiec.api.jdb.testfiles;
 
 public class Calculator {
 	public static void main(String[] args) {

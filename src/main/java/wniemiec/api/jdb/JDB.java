@@ -1,12 +1,13 @@
-package api.jdb;
+package wniemiec.api.jdb;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import api.util.ArgumentFile;
-import api.util.StringUtils;
+import wniemiec.util.io.path.ArgumentFile;
+import wniemiec.util.data.StringUtils;
+import wniemiec.util.task.process.ProcessManager;
 
 /**
  * Simple API for JBD (Java debugger).
@@ -153,12 +154,13 @@ public class JDB {
 		}
 		
 		private void createArgumentFileFromClassPath() {
+			ArgumentFile argFile = new ArgumentFile(
+				Path.of(System.getProperty("java.io.tmpdir")),
+				"argfile-jdb"
+			);
+
 			try {
-				argumentFile = ArgumentFile.createArgumentFile(
-						Path.of(System.getProperty("java.io.tmpdir")), 
-						"argfile-jdb.txt", 
-						classPath
-				);
+				argumentFile = argFile.create(classPath);
 			} 
 			catch (IOException e) {
 				argumentFile = null;
@@ -230,18 +232,24 @@ public class JDB {
 
 	public void quit() throws InterruptedException {
 		stopStreams();
-		process.destroy();
-		process.waitFor();
+		
+		if (process != null) {
+			process.destroy();
+			process.waitFor();
+		}
 	}
 	
 	private void stopStreams() {
-		in.close();
-		out.close();
+		if (in != null)
+			in.close();
+		
+		if (out != null)
+			out.close();
 	}
 	
-	public void forceQuit() {
+	public void forceQuit() throws IOException {
 		stopStreams();
-		process.destroyForcibly();
+		ProcessManager.getInstance().forceKillProcessWithPid(process.pid());
 	}
 	
 	/**
@@ -249,10 +257,12 @@ public class JDB {
 	 * {@link #read()} for JDB to process the command.
 	 * 
 	 * @param		command Command that will be sent to JDB
+	 * 
+	 * @throws		IllegalStateException If input is closed
 	 */
 	public JDB send(String command) {
 		if (in == null)
-			return this;
+			throw new IllegalStateException("Input is closed");
 		
 		in.send(command);
 		
@@ -281,8 +291,12 @@ public class JDB {
 	 * @return		JDB output
 	 * 
 	 * @throws		IOException If it cannot read JDB output
+	 * @throws		IllegalStateException If JDB output is closed
 	 */
 	public String read() {
+		if (out == null)
+			return "";
+		
 		try {
 			return out.read();
 		} 
@@ -298,8 +312,12 @@ public class JDB {
 	 * @return		List of read JDB output
 	 * 
 	 * @throws		IOException If it cannot read JDB output
+	 * @throws		IllegalStateException If output is closed
 	 */
 	public List<String> readAll() throws IOException {
+		if (out == null)
+			return new ArrayList<>();
+		
 		return out.readAll();
 	}
 	
@@ -310,6 +328,9 @@ public class JDB {
 	 * called; otherwise, returns false
 	 */
 	public boolean isReady() {
+		if (out == null)
+			return false;
+		
 		return out.isReady();
 	}
 	
@@ -320,6 +341,9 @@ public class JDB {
 	 * by another thread while it is waiting
 	 */
 	public void waitFor() throws InterruptedException {
+		if (process == null)
+			return;
+		
 		process.waitFor();
 	}
 	

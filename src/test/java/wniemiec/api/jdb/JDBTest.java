@@ -1,6 +1,7 @@
-package api.jdb;
+package wniemiec.api.jdb;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -24,7 +25,7 @@ public class JDBTest {
 	//		Constructor
 	//-------------------------------------------------------------------------
 	public JDBTest() {
-		testMethodClassSignature = "api.jdb.testfiles.Calculator";
+		testMethodClassSignature = "wniemiec.api.jdb.testfiles.Calculator";
 		invocationLine = 8;
 		displayMessages = false;
 	}
@@ -38,7 +39,7 @@ public class JDBTest {
 		JDB jdb = initializeJDB();
 		
 		String line = stopAfterBreakpoint(jdb);
-		assertEquals("> 8    		sum(2, 3);", line);
+		assertTrue(line.contains("8    		sum(2, 3);"));
 
 		jdb.quit();
 	}
@@ -48,11 +49,12 @@ public class JDBTest {
 	//		Methods
 	//-------------------------------------------------------------------------
 	private JDB initializeJDB() {
-		Path workingDirectory = Path.of(".", "bin").toAbsolutePath().normalize();
-		Path sourcePath = workingDirectory
-				.resolve(Path.of("..", "tests"))
-				.normalize();
+		Path workingDirectory = Path.of(".", "target", "test-classes").normalize().toAbsolutePath();
+		
 		List<Path> classpaths = List.of(workingDirectory);
+		Path sourcePath = workingDirectory
+				.resolve(Path.of("..", "..", "src", "test", "java"))
+				.normalize();
 		List<Path> sourcePaths = List.of(
 				workingDirectory.relativize(sourcePath)
 		);
@@ -68,8 +70,8 @@ public class JDBTest {
 		jdb.run().send(buildInitCommand());
 		
 		String line = jdb.read();
-		
-		while (!isBreakpoint(line)) {
+
+		while (!isBreakpoint(line) && jdb.isRunning()) {
 			line = jdb.read();
 			displayMessage(line);
 		}
@@ -125,8 +127,8 @@ public class JDBTest {
 	private void displayMessage(String message) {
 		if (!displayMessages)
 			return;
-		
-		
+
+		System.out.println(message);
 	}
 	
 	private void displayMessages() {
