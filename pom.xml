@@ -29,7 +29,7 @@
     <dependency>
       <groupId>wniemiec.util.io.path</groupId>
       <artifactId>argument-file</artifactId>
-      <version>[1.0.0,2.0.0)</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>wniemiec.util.data</groupId>
