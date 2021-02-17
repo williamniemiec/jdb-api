@@ -28,6 +28,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn --settings settings.xml --file pom.xml install
     - name: Jacoco
-      run: mvn -Pjacoco clean test jacoco:report
+      run: mvn clean test jacoco:report
     - name: Coveralls
       run: mvn -DrepoToken=DBXaidWUry5YSZE3DjuFbf3KyTEG3Ycf4 -DdryRun=true coveralls:report
