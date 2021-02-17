@@ -25,7 +25,7 @@ jobs:
     - name: 'Create settings.xml'
       run: |
         touch ~/.m2/settings.xml
-        echo '<settings><activeProfiles><activeProfile>github-packages</activeProfile></activeProfiles><profiles><profile><id>github-packages</id><repositories><repository><id>central</id><url>https://repo1.maven.org/maven2/</url><releases><enabled>true</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository><repository><id>github</id><name>GitHub williamniemiec Apache Maven Packages</name><url>https://maven.pkg.github.com/williamniemiec/utils/</url></repository></repositories></profile></profiles><servers><server><id>github</id><configuration><httpHeaders><property><name>Authorization</name><value>Bearer cbe0d269332039e09c4e237b7184b9b3bc8b0f64</value></property></httpHeaders></configuration></server></servers></settings>' > ~/.m2/settings.xml
+        echo '<settings><servers><server><id>github</id><configuration><httpHeaders><property><name>Authorization</name><value>Bearer ${{ secrets.GITHUB_TOKEN }}</value></property></httpHeaders></configuration></server></servers></settings>' > ~/.m2/settings.xml
     - name: Build with Maven
       run: mvn install
   
