@@ -29,5 +29,7 @@ jobs:
       run: mvn --settings settings.xml --file pom.xml install
     - name: Jacoco
       run: mvn clean verify
-    - name: Coveralls
-      run: mvn -DrepoToken=DBXaidWUry5YSZE3DjuFbf3KyTEG3Ycf4 -DdryRun=true coveralls:report
+    - uses: codecov/codecov-action@v1
+      with:
+          file: ./**/target/site/jacoco/jacoco.xml
+          name: codecov
