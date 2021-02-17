@@ -28,7 +28,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn --settings settings.xml --file pom.xml install
     - name: Jacoco
-      run: mvn clean verify
+      run: mvn jacoco:report
     - uses: codecov/codecov-action@v1
       with:
           file: ./**/target/site/jacoco/jacoco.xml
