@@ -27,8 +27,8 @@ jobs:
           servers: |
             [{
                 "id": "github",
-                "username": "williamniemiec",
-                "password": "${{ secrets.GITHUB_TOKEN }}"
+                "username": "${{ secrets.GITHUB_USERNAME }}",
+                "password": "${{ secrets.GITHUB_PASSWORD }}"
             }]
           repositories: |
             [{
