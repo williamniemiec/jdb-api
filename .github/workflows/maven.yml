@@ -22,12 +22,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.12
-    - name: 'Create settings.xml'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        touch ~/.m2/settings.xml
-        echo "<settings><activeProfiles><activeProfile>github</activeProfile></activeProfiles><profiles><profile><id>github</id><repositories><repository><id>central</id><url>https://repo1.maven.org/maven2/</url><releases><enabled>true</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository><repository><id>github</id><name>GitHub williamniemiec Apache Maven Packages</name><url>https://maven.pkg.github.com/williamniemiec/utils/</url><releases><enabled>true</enabled></releases><snapshots><enabled>true</enabled></snapshots></repository></repositories></profile></profiles><servers><server><id>github</id><username>williamniemiec</username><password>e73de053f356dbdb3c6bf2941aad67a4a2eb846e</password></server></servers></settings>" > ~/.m2/settings.xml
     - name: Build with Maven
-      run: mvn install
+      env:
+        GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mvn --settings settings.xml --file pom.xml install
   
