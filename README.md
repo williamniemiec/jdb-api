@@ -3,6 +3,14 @@
 
 <h1 align='center'>JDB API</h1>
 
+<p align="center">
+	<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/Java%20CI%20with%20Maven">
+	<img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/williamniemiec/jdb-api">
+	<img alt="GitHub" src="https://img.shields.io/github/license/williamniemiec/jdb-api">
+	<img src='https://coveralls.io/repos/github/williamniemiec/jdb-	api/badge.svg?branch=v1.x' alt='Coverage Status' />
+
+</p>
+
 <p align='center'>Simple JDB API for running The Java Debugger (JDB) in code</p>
 
 <hr />
