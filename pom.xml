@@ -48,12 +48,12 @@
     <dependency>
       <groupId>wniemiec.util.data</groupId>
       <artifactId>string-utils</artifactId>
-      <version>[1.0.0,2.0.0)</version>
+      <version>1.0.0</version>
     </dependency>
     <dependency>
       <groupId>wniemiec.util.task</groupId>
       <artifactId>process-manager</artifactId>
-      <version>[1.0.0,2.0.0)</version>
+      <version>1.0.0</version>
     </dependency>
   </dependencies>
   
