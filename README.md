@@ -2,23 +2,13 @@
 ![](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/logo/logo.jpg?raw=true)
 
 <h1 align='center'>JDB API</h1>
-
-<p align="center">
-	<a href="#">
-		<img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/Java%20CI%20with%20Maven">
-	</a>
-	<a href="https://codecov.io/gh/williamniemiec/jdb-api">
-		<img src="https://codecov.io/gh/williamniemiec/jdb-api/branch/v1.x/graph/badge.svg?token=R2SFS4SP86">
-	</a>
-	<a href="https://github.com/williamniemiec/jdb-api/releases">
-		<img src="https://img.shields.io/github/v/release/williamniemiec/jdb-api">
-	</a>
-	<a href="https://github.com/williamniemiec/jdb-api/blob/master/LICENCE">
-		<img src="https://img.shields.io/github/license/williamniemiec/jdb-api">
-	</a>
-</p>
-
 <p align='center'>Simple JDB API for running The Java Debugger (JDB) in code</p>
+<p align="center">
+	<a href="#"><img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/Java%20CI%20with%20Maven" alt=""></a>
+	<a href="https://codecov.io/gh/williamniemiec/jdb-api"><img src="https://codecov.io/gh/williamniemiec/jdb-api/branch/v1.x/graph/badge.svg?token=R2SFS4SP86" alt="Coverage status"></a>
+	<a href="https://github.com/williamniemiec/jdb-api/releases"><img src="https://img.shields.io/github/v/release/williamniemiec/jdb-api" alt="Release"></a>
+	<a href="https://github.com/williamniemiec/jdb-api/blob/master/LICENCE"><img src="https://img.shields.io/github/license/williamniemiec/jdb-api" alt="Licence"></a>
+</p>
 
 <hr />
 
