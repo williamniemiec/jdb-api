@@ -18,6 +18,20 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  
+  <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub williamniemiec Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/williamniemiec/utils</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
   <dependencies>
     <dependency>
