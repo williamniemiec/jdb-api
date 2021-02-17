@@ -25,6 +25,6 @@ jobs:
     - name: Build with Maven
       env:
         GITHUB_USERNAME: williamniemiec
-        GITHUB_TOKEN: b1285bd31f86cd6f20929276d9c9d1b03362c598
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn --settings settings.xml --file pom.xml install
   
