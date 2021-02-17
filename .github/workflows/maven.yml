@@ -28,4 +28,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: mvn --settings settings.xml --file pom.xml install
     - name: Code coverage
-      run: mvn clean jacoco:prepare-agent install jacoco:report coveralls:report
+      run: mvn clean jacoco:prepare-agent install jacoco:report -DrepoToken=DBXaidWUry5YSZE3DjuFbf3KyTEG3Ycf4 coveralls:report
