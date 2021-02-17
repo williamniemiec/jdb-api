@@ -22,8 +22,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.12
-    - name: Build with Maven
-      run: mvn install
     - uses: s4u/maven-settings-action@v2.3.0
       with:
           servers: |
@@ -32,4 +30,5 @@ jobs:
                 "username": "${{ secrets.USER_PACKAGE_READ }}",
                 "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
             }]
-  
+    - name: Build with Maven
+      run: mvn install
