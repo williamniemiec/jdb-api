@@ -23,5 +23,21 @@ jobs:
       with:
         java-version: 1.12
     - uses: s4u/maven-settings-action@v2.3.0
+      with:
+          servers: |
+            [{
+                "id": "github",
+                "username": "williamniemiec",
+                "password": "${{ secrets.GITHUB_TOKEN }}"
+            }]
+          repositories: |
+            [{
+                "repository": {
+                    "id": "github",
+                    "name": "GitHub williamniemiec Apache Maven Packages",
+                    url: "https://maven.pkg.github.com/williamniemiec/utils/"
+                }
+            }]
     - name: Build with Maven
       run: mvn install
+  
