@@ -90,7 +90,7 @@ System.out.println(line);
 
 ## 🔌 Installation
 #### Maven
-[See how to install here](https://github.com/williamniemiec/jdb-api/packages/613128#-installation)
+[See how to install here](https://github.com/williamniemiec/jdb-api/packages/613187#-installation)
 
 #### Eclipse IDE
 With your project opened, add [`jdb-api.jar`](https://github.com/williamniemiec/jdb-api/releases/) into project build path.
