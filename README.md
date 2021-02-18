@@ -8,7 +8,7 @@
 	<a href="https://github.com/williamniemiec/jdb-api/actions?query=workflow%3AMacOS"><img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/MacOS?label=MacOS" alt=""></a>
 	<a href="https://github.com/williamniemiec/jdb-api/actions?query=workflow%3AUbuntu"><img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/Ubuntu?label=Ubuntu" alt=""></a>
 	<a href="https://codecov.io/gh/williamniemiec/jdb-api"><img src="https://codecov.io/gh/williamniemiec/jdb-api/branch/v1.x/graph/badge.svg?token=R2SFS4SP86" alt="Coverage status"></a>
-	<a href="http://java.oracle.com"><img src="https://img.shields.io/badge/java-8+-4c7e9f.svg" alt="Java compatibility"></a>
+	<a href="http://java.oracle.com"><img src="https://img.shields.io/badge/java-8+-D0008F.svg" alt="Java compatibility"></a>
 	<a href="https://github.com/williamniemiec/jdb-api/releases"><img src="https://img.shields.io/github/v/release/williamniemiec/jdb-api" alt="Release"></a>
 	<a href="https://github.com/williamniemiec/jdb-api/blob/master/LICENCE"><img src="https://img.shields.io/github/license/williamniemiec/jdb-api" alt="Licence"></a>
 </p>
