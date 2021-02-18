@@ -55,15 +55,6 @@ jdb.readAll();    // Returns output as a list of strings
 
 See the list of commands [here](#commands).
 
-#### Eclipse IDE
-1) With your project opened, add [`jdb-api.jar`](https://github.com/williamniemiec/jdb-api/releases/) into project build path.
-![step1](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step1.png?raw=true)
-![step2](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step2.png?raw=true)
-![step3](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step3.png?raw=true)
-![step4](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step4.png?raw=true)
-
-2) Create variables with required information (working directory, classpaths and class signature)
-
 #### Example
 <pre>
 Path workingDirectory = Path.of(".", "bin").toAbsolutePath().normalize();
@@ -96,9 +87,21 @@ line = jdb.read();
 System.out.println(line);
 </pre>
 
-[See another example](https://github.com/williamniemiec/jdb-api/blob/master/tests/api/jdb/JDBTest.java).
 
-### <a name="commands"></a> 🎮 Commands
+## 🔌 Installation
+#### Maven
+[See how to install here](https://github.com/williamniemiec/jdb-api/packages/613128#-installation)
+
+#### Eclipse IDE
+1) With your project opened, add [`jdb-api.jar`](https://github.com/williamniemiec/jdb-api/releases/) into project build path.
+
+![step1](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step1.png?raw=true)
+![step2](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step2.png?raw=true)
+![step3](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step3.png?raw=true)
+![step4](https://raw.githubusercontent.com/williamniemiec/jdb-api/master/docs/img/how-to-use/step4.png?raw=true)
+
+
+## <a name="commands"></a> 🎮 Commands
 Here are the main commands that can be sent to the debugger using the send method.
 
 |        Command 	| Description|
