@@ -4,8 +4,11 @@
 <h1 align='center'>JDB API</h1>
 <p align='center'>Simple JDB API for running The Java Debugger (JDB) in code</p>
 <p align="center">
-	<a href="#"><img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/Java%20CI%20with%20Maven" alt=""></a>
+	<a href="https://github.com/williamniemiec/jdb-api/actions"><img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/Windows?label=Windows" alt=""></a>
+	<a href="https://github.com/williamniemiec/jdb-api/actions"><img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/MacOS?label=MacOS" alt=""></a>
+	<a href="https://github.com/williamniemiec/jdb-api/actions"><img src="https://img.shields.io/github/workflow/status/williamniemiec/jdb-api/Ubuntu?label=Ubuntu" alt=""></a>
 	<a href="https://codecov.io/gh/williamniemiec/jdb-api"><img src="https://codecov.io/gh/williamniemiec/jdb-api/branch/v1.x/graph/badge.svg?token=R2SFS4SP86" alt="Coverage status"></a>
+	<a href="http://java.oracle.com"><img src="https://img.shields.io/badge/java-8+-4c7e9f.svg" alt="Java compatibility"></a>
 	<a href="https://github.com/williamniemiec/jdb-api/releases"><img src="https://img.shields.io/github/v/release/williamniemiec/jdb-api" alt="Release"></a>
 	<a href="https://github.com/williamniemiec/jdb-api/blob/master/LICENCE"><img src="https://img.shields.io/github/license/williamniemiec/jdb-api" alt="Licence"></a>
 </p>
