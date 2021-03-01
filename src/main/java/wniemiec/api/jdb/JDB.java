@@ -137,8 +137,8 @@ public class JDB {
 			if (argumentFile == null) {
 				return new JDB(
 						workingDirectory, 
-						StringUtils.implode(relativizePaths(classPath), File.separator), 
-						StringUtils.implode(relativizePaths(srcPath), File.separator), 
+						StringUtils.implode(relativizePaths(classPath), File.pathSeparator), 
+						StringUtils.implode(relativizePaths(srcPath), File.pathSeparator), 
 						classSignature, 
 						classArgs
 				);
@@ -147,7 +147,7 @@ public class JDB {
 				return new JDB(
 						workingDirectory, 
 						"@" + argumentFile, 
-						StringUtils.implode(relativizePaths(srcPath), File.separator), 
+						StringUtils.implode(relativizePaths(srcPath), File.pathSeparator), 
 						classSignature, 
 						classArgs
 				);

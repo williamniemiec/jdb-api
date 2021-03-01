@@ -6,7 +6,7 @@
 
   <groupId>wniemiec.api</groupId>
   <artifactId>jdb</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <name>JDB API</name>
   <description>Simple API for JBD (Java debugger).</description>
@@ -37,13 +37,13 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>4.13</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>wniemiec.util.io.path</groupId>
       <artifactId>argument-file</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
     <dependency>
       <groupId>wniemiec.util.data</groupId>
