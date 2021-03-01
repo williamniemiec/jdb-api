@@ -1,5 +1,6 @@
 package wniemiec.api.jdb;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -136,8 +137,8 @@ public class JDB {
 			if (argumentFile == null) {
 				return new JDB(
 						workingDirectory, 
-						StringUtils.implode(relativizePaths(classPath), ";"), 
-						StringUtils.implode(relativizePaths(srcPath), ";"), 
+						StringUtils.implode(relativizePaths(classPath), File.separator), 
+						StringUtils.implode(relativizePaths(srcPath), File.separator), 
 						classSignature, 
 						classArgs
 				);
@@ -146,7 +147,7 @@ public class JDB {
 				return new JDB(
 						workingDirectory, 
 						"@" + argumentFile, 
-						StringUtils.implode(relativizePaths(srcPath), ";"), 
+						StringUtils.implode(relativizePaths(srcPath), File.separator), 
 						classSignature, 
 						classArgs
 				);
